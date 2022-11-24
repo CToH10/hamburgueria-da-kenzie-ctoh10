@@ -2,10 +2,12 @@ import { ProductCard } from "./ProductCard";
 
 export function ProductsList({ list, action }) {
   return (
-    <ul>
-      {list.map((product) => (
-        <ProductCard product={product} action={action} />
-      ))}
-    </ul>
+    <main>
+      <ul>
+        {list.map((product) => (
+          <ProductCard product={product} action={action} key={product.id} />
+        ))}
+      </ul>
+    </main>
   );
 }
