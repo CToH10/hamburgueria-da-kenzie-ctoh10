@@ -108,7 +108,7 @@ export const StyledHeader = styled.header`
     }
 
     form button {
-      top: 0.8vh;
+      top: 0.9vh;
       right: 9vw;
       padding: 0.7vh 2vw;
     }
