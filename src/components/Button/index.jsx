@@ -1,6 +1,11 @@
-export function Button({ text, action, type = "submit" }) {
+export function Button({ text, action, type = "submit", className }) {
   return (
-    <button type={type} onClick={action}>
+    <button
+      aria-label={text}
+      type={type}
+      onClick={action}
+      className={className}
+    >
       {text}
     </button>
   );
