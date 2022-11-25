@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import "./App.css";
 import { Header } from "./components/Header";
 import { ProdCart } from "./components/ProdCart";
 import { ProductsList } from "./components/Products";
