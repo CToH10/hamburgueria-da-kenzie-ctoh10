@@ -3,7 +3,7 @@ import { StyledAside } from "../../styles/style";
 import { ProdOnCart } from "./Prod";
 import { StyledCartTitle, StyledEmptyCart, StyledTotal } from "./style";
 
-export function ProdCart({ list = [], action }) {
+export function ProdCart({ list = [], action, empty }) {
   let priceTotal = list.map((elem) => elem.price * elem.quantity);
 
   if (list.length !== 0) {
@@ -26,7 +26,7 @@ export function ProdCart({ list = [], action }) {
                 <strong>Total:</strong>
                 <p>R$ {priceTotal}</p>
               </section>
-              <button onClick={() => (list = [])}> Remover todos</button>
+              <button onClick={empty}> Remover todos</button>
             </StyledTotal>
           </>
         ) : (

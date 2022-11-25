@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { StyledHeader } from "../../styles/style";
 import { Button } from "../Button";
-import { MdDarkMode } from "react-icons/md";
+import { MdLightbulb, MdLightbulbOutline } from "react-icons/md";
 import burguer from "../../assets/burguer.svg";
 
 export function Header({ action }) {
@@ -29,7 +29,11 @@ export function Header({ action }) {
       <img src={burguer} alt="BurguerKenzie" />
 
       <section>
-        <Button className="darkMode" action={darkMode} text={<MdDarkMode />} />
+        <Button
+          className="darkMode"
+          action={darkMode}
+          text={dark ? <MdLightbulbOutline /> : <MdLightbulb />}
+        />
         <form
           onSubmit={(event) => {
             event.preventDefault();

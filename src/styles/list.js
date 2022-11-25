@@ -115,6 +115,7 @@ export const StyledCartList = styled(StyledList)`
   border-radius: 0px 0px 5px 5px;
   max-height: 50vh;
   margin-bottom: 3vh;
+  width: 95vw;
 
   @media (min-width: 750px) {
     width: 79%;

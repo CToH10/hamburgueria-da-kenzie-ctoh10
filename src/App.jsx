@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import "./App.css";
 import { Header } from "./components/Header";
 import { ProdCart } from "./components/ProdCart";
@@ -32,20 +33,16 @@ function App() {
               elem.category.toLowerCase().includes(input)
           )
         );
-    // console.log(products);
   }
 
   function addProdCart(product) {
+    //não pode repetir
     let index = prodCart.findIndex((elem) => elem.id === product.id);
     if (index === -1) {
+      toast.success(`${product.name} adicionado com sucesso`);
       setProdCart([...prodCart, { ...product, quantity: 1 }]);
     } else {
-      prodCart.map((prod) =>
-        prod.id === prodCart[index].id
-          ? { ...prod, ...(prod.quantity = prod.quantity + 1) }
-          : prod
-      );
-      setProdCart([...prodCart]);
+      toast.error(`${product.name} já adicionado`);
     }
   }
 
@@ -65,6 +62,10 @@ function App() {
     });
   }
 
+  function emptyList() {
+    setProdCart([]);
+  }
+
   return (
     <section className="App">
       <Header action={searchBar} />
@@ -73,7 +74,11 @@ function App() {
       ) : (
         <ProductsList list={prodList} action={addProdCart} />
       )}
-      <ProdCart list={prodCart} action={removeProdCart}></ProdCart>
+      <ProdCart
+        list={prodCart}
+        action={removeProdCart}
+        empty={emptyList}
+      ></ProdCart>
     </section>
   );
 }
