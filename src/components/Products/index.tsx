@@ -1,13 +1,18 @@
+import { iProduct } from "../../Contexts/DashContext";
 import { StyledList } from "../../styles/list";
 import { StyledMain } from "../../styles/style";
 import { ProductCard } from "./ProductCard";
 
-export function ProductsList({ list, action }) {
+interface iProps {
+  list: iProduct[];
+}
+
+export function ProductsList({ list }: iProps) {
   return (
     <StyledMain>
-      <StyledList direction={"row"} liDirecion={"column"}>
+      <StyledList>
         {list.map((product) => (
-          <ProductCard product={product} action={action} key={product.id} />
+          <ProductCard product={product} />
         ))}
       </StyledList>
     </StyledMain>

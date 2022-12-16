@@ -40,7 +40,15 @@ export const StyledHeader = styled.header`
     }
   }
 
-  .darkMode {
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    min-width: 110px;
+    max-width: 115px;
+    position: relative;
+  }
+
+  .buttons button {
     width: 10vw;
     height: 5vh;
     background-color: inherit;
@@ -48,9 +56,24 @@ export const StyledHeader = styled.header`
     cursor: pointer;
   }
 
+  .buttons span {
+    color: var(--font-white);
+    font-weight: var(--font-weight-1);
+    font-size: var(--font-size-3);
+    background-color: var(--color-primary);
+    width: fit-content;
+    height: fit-content;
+    padding: 1px 3px;
+    border-radius: 5px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+  }
+
   @media (min-width: 750px) {
-    .darkMode {
-      width: 3vw;
+    .buttons button {
+      width: 2vw;
+      height: 4vh;
     }
   }
 
@@ -87,7 +110,7 @@ export const StyledHeader = styled.header`
   form button {
     position: relative;
     top: 0.8vh;
-    right: 29vw;
+    right: 14vw;
     height: 70%;
     padding: 0 2vw;
     border-radius: 8px;
@@ -109,8 +132,15 @@ export const StyledHeader = styled.header`
 
     form button {
       top: 0.9vh;
-      right: 9vw;
-      padding: 0.7vh 2vw;
+      right: 6vw;
+      padding: 0.2vh 1vw;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    form button {
+      right: 4vw;
+      padding: 0.2vh 0.7vw;
     }
   }
 `;
@@ -120,7 +150,6 @@ export const StyledMain = styled.main`
   margin: 0 auto;
 
   @media (min-width: 750px) {
-    width: 59%;
     margin: 0;
     position: relative;
     left: 5vw;
@@ -128,8 +157,10 @@ export const StyledMain = styled.main`
 `;
 
 export const StyledAside = styled.aside`
+  height: fit-content;
   @media (min-width: 750px) {
-    width: 40%;
+    width: 36%;
+    min-width: 375px;
     margin: 0;
     position: absolute;
     left: 60vw;
