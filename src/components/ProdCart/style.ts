@@ -6,9 +6,13 @@ export const StyledTotal = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 2vh;
-  margin: 0 auto;
+  margin: 0 auto 10px;
   height: 8vh;
   border-top: 3px solid var(--grey-20);
+
+  @media (min-width: 750px) {
+    margin: 0 auto 35px;
+  }
 
   .cartTotal {
     width: 90%;
@@ -51,7 +55,6 @@ export const StyledCartTitle = styled.h2`
   color: var(--font-white);
   font-weight: var(--font-weight-1);
   margin: 0 auto;
-  width: 95%;
   text-align: start;
   padding: 1vh 0 1vh 1vw;
   border-radius: 5px 5px 0 0;

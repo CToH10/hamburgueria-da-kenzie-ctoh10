@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 export const Global = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root{
     --color-primary: #27AE60;
@@ -35,9 +34,9 @@ body {
 
 html[dark] {
     --grey-100: #333333;
-    --grey-50: #828282;
+    --grey-50: #525252;
     --grey-20: #BDBDBD;
-    --grey-0: #828282;
+    --grey-0: #525252;
     --gray-4: #BDBDBD;
     --white: #333333;
 
