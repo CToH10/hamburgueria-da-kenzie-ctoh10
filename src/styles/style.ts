@@ -72,7 +72,7 @@ export const StyledHeader = styled.header`
 
   @media (min-width: 750px) {
     .buttons button {
-      width: 2vw;
+      width: 3vw;
       height: 4vh;
     }
   }
@@ -121,6 +121,17 @@ export const StyledHeader = styled.header`
     cursor: pointer;
   }
 
+  form button svg {
+    /* height: 4vh; */
+    height: clamp(20px, 4vh, 25px);
+    width: clamp(20px, 5vw, 20px);
+    /* width: 5vw;
+    min-height: 20px;
+    min-width: 20px;
+    max-width: 20px;
+    max-height: 25px; */
+  }
+
   @media (min-width: 750px) {
     form {
       width: 70%;
@@ -131,16 +142,17 @@ export const StyledHeader = styled.header`
     }
 
     form button {
-      top: 0.9vh;
+      top: 0.5vh;
       right: 6vw;
-      padding: 0.2vh 1vw;
+      padding: 0vh 1vw;
     }
   }
 
   @media (min-width: 1000px) {
     form button {
       right: 4vw;
-      padding: 0.2vh 0.7vw;
+      top: 0.5vh;
+      padding: 0vh 0.7vw;
     }
   }
 `;
