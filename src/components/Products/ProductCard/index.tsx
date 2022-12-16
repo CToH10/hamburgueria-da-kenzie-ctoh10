@@ -1,9 +1,17 @@
-export function ProductCard({ product, action, id }) {
+import { useContext } from "react";
+import { DashContext, iProduct } from "../../../Contexts/DashContext";
+
+interface iProps {
+  product: iProduct;
+}
+
+export function ProductCard({ product }: iProps) {
+  const { addProdCart } = useContext(DashContext);
   function prodOnClick() {
-    action(product);
+    addProdCart({ ...product, quantity: 1 });
   }
   return (
-    <li key={id}>
+    <li key={product.id} id={`${product.id}`}>
       <figure>
         <img src={product.img} alt={product.name} />
         <figcaption>{product.name}</figcaption>
