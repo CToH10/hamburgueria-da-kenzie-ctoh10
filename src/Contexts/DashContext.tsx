@@ -52,8 +52,12 @@ export const DashProvider = ({ children }: iDashContextProps) => {
     } catch (err) {
       const error = err as AxiosError<iDefaultError>;
       let message;
+      console.log(error);
+
       message = error.response?.data;
-      toast.error(`${message}`);
+      error.response?.status === 401
+        ? navigate("/login")
+        : toast.error(`${message}`);
     }
   }
 
